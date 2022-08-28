@@ -1,6 +1,4 @@
-# Title (replace with your title)
-
-Introductory paragraph (replace this with your text)
+# Regex Expression Tutorial - E-Mail Verification
 
 ## Summary
 
@@ -8,8 +6,7 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ```
 /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/gm
 ```
-This Regex Expression is used to verify an email. This expression uses the anchors ^ and $ at the start and end of the expression, and has 3 groups that are seperated by an @ symbol and . (period). The expression is broken up in the following way: 
-
+This Regex Expression is used to verify an email. This expression uses the anchors ^ and $ at the start and end of the expression, and has 3 groups that are seperated by an @ symbol and . (period). Using the global and multi-line flags, this expression allows for multiple matches and can verify several emails by placing each on a new line. This expression will only accept lowercase letters and uppercase letters would be considered invalid. Other than lowercase letters and standard numbers, the email username accepts underscore, hyphen and period as valid characters, the email domain name accepts periods and hyphens, and the email domain type only accepts lowercase letters and periods.
 
 ## Table of Contents
 
@@ -34,40 +31,53 @@ This Regex Expression is used to verify an email. This expression uses the ancho
 
 The expression is broken up in the following manner:
 
-* ```^```     
+* `^`
     * start of string/line anchor
-* ```([a-z0-9_\.-]+) ```
+* `([a-z0-9_\.-]+) `
     * Group 1 with a set matching lowercase letters, digits 0-9, _ (underscore), . (period), and - (hyphen). + (plus sign) indicating that there must be 1 or more matches for the set.
-* ```@``` 
+* `@`
     * Require exactly to have the @ symbol
-* ```([\da-z\.-]+) ```
+* `([\da-z\.-]+) `
     * Group 2 with a set matching lowercase letters, digits, . (period), and - (hyphen). + (plus sign) indicating that there must be 1 or more matches for the set.
-* ``` \. ``` 
+* ` \. `
     * Require exactly to have a . (period).
-* ```([a-z\.]{2,6}) ```
+* `([a-z\.]{2,6}) `
     * Group 3 with a set matching lowercase letters and . (period). Only allowing between 2 to 6 valid matches.
-* ```$``` 
+* `$`
     * end of string/line anchor
-* ```gm```
+* `gm`
     * Global and Multiline flags
 
 ## Regex Components
 
 ### Anchors
 
-* ^
+Matches a position in a string (or line with multi-line flag).
+
+* `^`
     * Matches the beginning of the string (or beginning of a line if using the multi-line flag)
-* $
+* `$`
     * Matches the end of the string (or end of a line if using the multi-line flag)
 
 ### Quantifiers
 
-* { 2, 6 }
+Quantifiers are used to indicate the number of times a token preceding the quanitifer should be matched. The expression used here only utilitizes two quantifier types, the first being the ` + ` sign and the second being `{ 2 , 6 }`
+
+* `+`
+    * Matches 1 or more of the token
+* `{ 2 , 6 }`
     * Quantifier in group 3 that indicates that the set should match 2 to 6 valid characters
 
-### OR Operator
-
 ### Character Classes
+
+* `a-z`
+    * Range of characters, all lowercase characters from a to z
+* ` 0-9 `
+    * Range of characters, all numbers from 0 to 9
+* ` \d `
+    * Matches any digit character (0-9)
+* `_\.-`
+    * Matches the specific characters for underscore, hyphen and period.
 
 ### Flags
 
