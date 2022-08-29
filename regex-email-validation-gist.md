@@ -37,11 +37,11 @@ The expression is broken up in the following manner:
     * Group 1 with a set matching lowercase letters, digits 0-9, _ (underscore), . (period), and - (hyphen). + (plus sign) indicating that there must be 1 or more matches for the set.
 * `@`
     * Require exactly to have the @ symbol
-* `([\da-z\.-]+) `
+* `([\da-z\.-]+)`
     * Group 2 with a set matching lowercase letters, digits, . (period), and - (hyphen). + (plus sign) indicating that there must be 1 or more matches for the set.
 * ` \. `
     * Require exactly to have a . (period).
-* `([a-z\.]{2,6}) `
+* `([a-z\.]{2,6})`
     * Group 3 with a set matching lowercase letters and . (period). Only allowing between 2 to 6 valid matches.
 * `$`
     * end of string/line anchor
@@ -70,18 +70,36 @@ Quantifiers are used to indicate the number of times a token preceding the quani
 
 ### Character Classes
 
+Matches a character from a specified set.
+
 * `a-z`
     * Range of characters, all lowercase characters from a to z
 * ` 0-9 `
     * Range of characters, all numbers from 0 to 9
 * ` \d `
-    * Matches any digit character (0-9)
+    * Predefined character class to match any digit character (0-9)
 * `_\.-`
     * Matches the specific characters for underscore, hyphen and period.
 
 ### Flags
 
+Expression flags can change how the expression is interpreted.
+
+* `/g`
+    * Global flag indicating that it should find all matches in the string rather than just the first match
+* `/m`
+    * Multi-line flag enables the anchors `^` and `$` to match the start and end of a line rather than just the start and end of a string
+
 ### Grouping and Capturing
+
+Grouping allows you to wrap a series of tokens in `( )` parenthesis and operate on them together. In the example expression, there are 3 groups.
+
+* `([a-z0-9_\.-]+)`
+    * Group 1 used for the email name
+* `([\da-z\.-]+)`
+    * Group 2 used for the first portion of the domain (name before the period)
+* `([a-z\.]{2,6})`
+    * Group 3 used for the second portion of the domain (.com,.edu, etc after the period)
 
 ### Bracket Expressions
 
