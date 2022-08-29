@@ -1,5 +1,7 @@
 # 17 Computer Science for JavaScript: Regex Tutorial
 
+This project was to create a tutorial using a regular expression and explain each portion of the expression and how it works. In the tutorial found in this [repo](./regex-email-validation-gist.md) or on its own [gist page](https://gist.github.com/cnohilly/a24c22f3fc9c6e21577631f0e990df34), I used a regex for matching an email. 
+
 Developers write code, but they also write *about* code. Take a moment to search the web for tutorials about any of the subjects you’ve learned so far in this course. You’re likely to find thousands of tutorials written by developers of all skill levels, but especially by junior developers&mdash;like you!
 
 Your Challenge this week is to create a tutorial that explains how a specific regular expression, or regex, functions by breaking down each part of the expression and describing what it does.

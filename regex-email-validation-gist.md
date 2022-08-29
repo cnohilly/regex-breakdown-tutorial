@@ -1,4 +1,4 @@
-# Regex Expression Tutorial - E-Mail Verification
+# Regex Tutorial - E-Mail Verification
 
 ## Summary
 
@@ -6,11 +6,11 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ```
 /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/gm
 ```
-This Regex Expression is used to verify an email. This expression uses the anchors ^ and $ at the start and end of the expression, and has 3 groups that are separated by an @ symbol and . (period). Using the global and multi-line flags, this expression allows for multiple matches and can verify several emails by placing each on a new line. This expression will only accept lowercase letters and uppercase letters would be considered invalid. Other than lowercase letters and standard numbers, the email username accepts underscore, hyphen and period as valid characters, the email domain name accepts periods and hyphens, and the email domain type only accepts lowercase letters and periods.
+This expression is used to verify an email. This expression uses the anchors ^ and $ at the start and end of the expression, and has 3 groups that are separated by an @ symbol and . (period). Using the global and multi-line flags, this expression allows for multiple matches and can verify several emails by placing each on a new line. This expression will only accept lowercase letters and uppercase letters would be considered invalid. Other than lowercase letters and standard numbers, the email username accepts underscore, hyphen and period as valid characters, the email domain name accepts periods and hyphens, and the email domain type only accepts lowercase letters and periods.
 
 ## Table of Contents
 
-- [Regex Expression](#regex-expression)
+- [Regular Expression](#regular-expression)
 - [Anchors](#anchors)
 - [Quantifiers](#quantifiers)
 - [Character Classes](#character-classes)
@@ -18,7 +18,7 @@ This Regex Expression is used to verify an email. This expression uses the ancho
 - [Grouping and Capturing](#grouping-and-capturing)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
 
-## Regex Expression
+## Regular Expression
 
 ```
 /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/gm
